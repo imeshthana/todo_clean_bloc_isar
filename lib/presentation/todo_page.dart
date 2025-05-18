@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_clean_bloc/domain/repository/todo_repo.dart';
 import 'package:todo_clean_bloc/presentation/todo_cubit.dart';
+import 'package:todo_clean_bloc/presentation/todo_view.dart';
 
 class TodoPage extends StatelessWidget {
   final TodoRepo todoRepo;
@@ -9,8 +10,8 @@ class TodoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: (context)=> TodoCubit(todoRepo)
-    
+    return BlocProvider(create: (context)=> TodoCubit(todoRepo),
+          child: const TodoView(),
     );
   }
 }
